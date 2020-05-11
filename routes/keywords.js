@@ -26,7 +26,6 @@ router.post("/", function (req, res, next) {
 // Read all
 // =========
 router.get("/", function (req, res, next) {
-  console.log("get ");
   Keywords.getAll((e, result) => {
     if (e) {
       res.status(500).send(e);

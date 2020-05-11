@@ -15,7 +15,6 @@ router.post("/", function (req, res, next) {
     openhoursend: req.body.openhoursend,
   };
   const keywords = req.body.keywords;
-  console.log("here " + JSON.stringify(place));
   Places.create(place, keywords, (e, place) => {
     if (e) {
       console.log(e);
@@ -31,9 +30,6 @@ router.post("/", function (req, res, next) {
 // Read many
 // =========
 router.get("/", function (req, res, next) {
-  console.log("get ");
-  //res.sendStatus(200);
-  //next();
   let query = req.query.title || {};
   console.log("get query " + JSON.stringify(query));
   Places.getByTitle(query, (e, result) => {
@@ -66,7 +62,6 @@ router.get("/:_id", function (req, res, next) {
 // Update
 // ======
 router.put("/:_id", function (req, res, next) {
-  console.log("changing");
   const place = {
     title: req.body.title,
     description: req.body.description,
