@@ -21,6 +21,8 @@ Node.js Rest API for adding, editing and displaying places
 
 You can edit the test data in /database/initialdata.js
 
+run command `npm install` in project folder
+
 ### `npm run start`
 
-Launches the app
+Launches the app, by default it listens to port 9000
