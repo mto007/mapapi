@@ -18,7 +18,7 @@ placesSchema.statics = {
   },
 
   getByTitle: function (query, cb) {
-    this.find({ title: { $regex: ".*" + query + ".*" } }, cb).populate(
+    this.find({ title: new RegExp(query, "i") }, cb).populate(
       "keywords.keywordsSchema"
     );
   },
